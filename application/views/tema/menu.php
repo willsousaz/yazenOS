@@ -84,6 +84,17 @@
                     </li>
                 <?php } ?>
 
+                <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'aVenda')) { ?>
+                    <li class="<?php if (isset($menuPdv)) {
+                        echo 'active';
+                    }; ?>">
+                        <a class="tip-bottom" title="" href="<?= site_url('pdv') ?>"><i class='bx bx-barcode-reader iconX'></i>
+                            <span class="title">PDV</span>
+                            <span class="title-tooltip">PDV</span>
+                        </a>
+                    </li>
+                <?php } ?>
+
                 <?php if ($this->permission->checkPermission($this->session->userdata('permissao'), 'vOs')) { ?>
                     <li class="<?php if (isset($menuOs)) {
                         echo 'active';
